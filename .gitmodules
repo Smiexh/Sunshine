@@ -58,3 +58,6 @@
 	path = third-party/wlr-protocols
 	url = https://gitlab.freedesktop.org/wlroots/wlr-protocols.git
 	branch = master
+[submodule "third-party/parsec-vdd"]
+	path = third-party/parsec-vdd
+	url = https://github.com/nomi-san/parsec-vdd.git
