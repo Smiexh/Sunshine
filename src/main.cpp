@@ -21,6 +21,7 @@
 #include "upnp.h"
 #include "version.h"
 #include "video.h"
+#include "vdd.h"
 
 extern "C" {
 #include "rswrapper.h"
@@ -290,6 +291,13 @@ main(int argc, char *argv[]) {
   auto sync_upnp = std::async(std::launch::async, [&upnp_unmap]() {
     upnp_unmap = upnp::start();
   });
+
+#ifdef _WIN32
+  std::unique_ptr<platf::deinit_t> pvdd;
+  auto sync_pvdd = std::async(std::launch::async, [&pvdd]() {
+    pvdd = vdd::start();
+  });
+#endif
 
   // FIXME: Temporary workaround: Simple-Web_server needs to be updated or replaced
   if (shutdown_event->peek()) {
