@@ -33,7 +33,7 @@ namespace vdd {
       DeviceStatus status = QueryDeviceStatus(&VDD_CLASS_GUID, VDD_HARDWARE_ID);
 
       if (status != DEVICE_OK) {
-        printf("Parsec VDD device is not OK, got status %d.\n", status);
+        BOOST_LOG(info) << "Parsec VDD device is not OK, got status " << status;
         shutdown_event->raise(true);
       }
 
