@@ -34,7 +34,7 @@ jobs:
       # release_generate_release_notes: ${{ steps.setup_release.outputs.release_generate_release_notes }}
       # release_tag: ${{ steps.setup_release.outputs.release_tag }}
       # release_version: ${{ steps.setup_release.outputs.release_version }}
-      publish_release: "smiexh'
+      publish_release: "smiexh"
       release_body: "smiexh"
       release_commit: "112233"
       release_generate_release_notes: "Nothing"
