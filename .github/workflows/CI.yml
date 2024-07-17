@@ -28,22 +28,30 @@ jobs:
   setup_release:
     name: Setup Release
     outputs:
-      publish_release: ${{ steps.setup_release.outputs.publish_release }}
-      release_body: ${{ steps.setup_release.outputs.release_body }}
-      release_commit: ${{ steps.setup_release.outputs.release_commit }}
-      release_generate_release_notes: ${{ steps.setup_release.outputs.release_generate_release_notes }}
-      release_tag: ${{ steps.setup_release.outputs.release_tag }}
-      release_version: ${{ steps.setup_release.outputs.release_version }}
+      # publish_release: ${{ steps.setup_release.outputs.publish_release }}
+      # release_body: ${{ steps.setup_release.outputs.release_body }}
+      # release_commit: ${{ steps.setup_release.outputs.release_commit }}
+      # release_generate_release_notes: ${{ steps.setup_release.outputs.release_generate_release_notes }}
+      # release_tag: ${{ steps.setup_release.outputs.release_tag }}
+      # release_version: ${{ steps.setup_release.outputs.release_version }}
+      publish_release: "smiexh'
+      release_body: "smiexh"
+      release_commit: "112233"
+      release_generate_release_notes: "Nothing"
+      release_tag: "smiexh"
+      release_version: "smiexh.0.1"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        run: |
+          echo ...
+      #   uses: actions/checkout@v4
 
-      - name: Setup Release
-        id: setup_release
-        uses: LizardByte/setup-release-action@v2024.714.140421
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+      # - name: Setup Release
+      #   id: setup_release
+      #   uses: LizardByte/setup-release-action@v2024.714.140421
+      #   with:
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
   setup_flatpak_matrix:
     name: Setup Flatpak Matrix
